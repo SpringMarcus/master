@@ -1,6 +1,6 @@
 package com.kibo.order.controller.rest;
 
-import com.kibo.order.a_bean.BeanExample;
+import com.kibo.order.bean.BeanExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

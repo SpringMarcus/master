@@ -1,6 +1,6 @@
 package com.kibo.order.config;
 
-import com.kibo.order.a_bean.BeanExample;
+import com.kibo.order.bean.BeanExample;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

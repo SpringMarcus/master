@@ -1,8 +1,6 @@
-package com.kibo.order.a_bean;
+package com.kibo.order.bean;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Created by marcus.chiu on 10/28/16.

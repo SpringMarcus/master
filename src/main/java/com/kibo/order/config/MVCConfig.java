@@ -27,7 +27,6 @@ import javax.annotation.PostConstruct;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.kibo.order")
-@Import({BusinessLogicConfig.class})
 public class MVCConfig extends WebMvcConfigurationSupport {
 
     @PostConstruct

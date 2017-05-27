@@ -1,7 +1,7 @@
-package com.kibo.order.data.repository.dao_implementation;
+package com.kibo.order.data.repository.v1.dao_implementation;
 
-import com.kibo.order.data.repository.dao.AbstractDao;
-import com.kibo.order.data.repository.dao.PhoneDao;
+import com.kibo.order.data.repository.v1.dao.AbstractDao;
+import com.kibo.order.data.repository.v1.dao.PhoneDao;
 import com.kibo.order.data.entity.entity.Phone;
 import org.hibernate.Criteria;
 import org.hibernate.Query;

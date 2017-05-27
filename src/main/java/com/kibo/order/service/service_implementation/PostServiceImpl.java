@@ -2,7 +2,7 @@ package com.kibo.order.service.service_implementation;
 
 import com.kibo.order.service.service.PostService;
 import com.kibo.order.data.entity.entity.Post;
-import com.kibo.order.data.repository.dao.PostDao;
+import com.kibo.order.data.repository.v1.dao.PostDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

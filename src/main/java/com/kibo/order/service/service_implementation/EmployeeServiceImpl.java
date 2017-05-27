@@ -1,7 +1,7 @@
 package com.kibo.order.service.service_implementation;
 
 import com.kibo.order.service.service.EmployeeService;
-import com.kibo.order.data.repository.dao.EmployeeDao;
+import com.kibo.order.data.repository.v1.dao.EmployeeDao;
 import com.kibo.order.data.entity.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

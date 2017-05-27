@@ -1,7 +1,7 @@
-package com.kibo.order.data.repository.dao_implementation;
+package com.kibo.order.data.repository.v1.dao_implementation;
 
-import com.kibo.order.data.repository.dao.AbstractDao;
-import com.kibo.order.data.repository.dao.EmployeeDao;
+import com.kibo.order.data.repository.v1.dao.AbstractDao;
+import com.kibo.order.data.repository.v1.dao.EmployeeDao;
 import com.kibo.order.data.entity.entity.Employee;
 import org.hibernate.Criteria;
 import org.hibernate.Query;

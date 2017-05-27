@@ -1,4 +1,4 @@
-package com.kibo.order.data.repository.dao;
+package com.kibo.order.data.repository.v1.dao;
 
 import com.kibo.order.data.entity.entity.Phone;
 

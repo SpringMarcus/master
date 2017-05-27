@@ -1,7 +1,7 @@
 package com.kibo.order.service.service_implementation;
 
 import com.kibo.order.service.service.PhoneService;
-import com.kibo.order.data.repository.dao.PhoneDao;
+import com.kibo.order.data.repository.v1.dao.PhoneDao;
 import com.kibo.order.data.entity.entity.Phone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

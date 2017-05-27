@@ -1,4 +1,4 @@
-package com.kibo.order.data.repository.dao;
+package com.kibo.order.data.repository.v1.dao;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;

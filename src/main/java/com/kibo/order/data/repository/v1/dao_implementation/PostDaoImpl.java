@@ -1,8 +1,8 @@
-package com.kibo.order.data.repository.dao_implementation;
+package com.kibo.order.data.repository.v1.dao_implementation;
 
 import com.kibo.order.data.entity.entity.Post;
-import com.kibo.order.data.repository.dao.AbstractDao;
-import com.kibo.order.data.repository.dao.PostDao;
+import com.kibo.order.data.repository.v1.dao.AbstractDao;
+import com.kibo.order.data.repository.v1.dao.PostDao;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;

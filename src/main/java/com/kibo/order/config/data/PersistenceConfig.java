@@ -155,23 +155,23 @@ public class PersistenceConfig {
         return properties;
     }
 
-    /**
-     * JPA EntityManagerFactory
-     * @param dataSource
-     * @return EntityManagerFactory - this creates EntityManager Objects
-     */
-    @Bean
-    public EntityManagerFactory entityManagerFactory( DataSource dataSource){
-        System.out.println("creating EntityManagerFactory");
-        final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-        em.setDataSource(dataSource);
-        em.setPackagesToScan("com.kibo.order.data.entity.entity");
-        em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        em.setJpaProperties(hibernateProperties());
-        em.setPersistenceUnitName("mytestdomain");
-        em.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        em.afterPropertiesSet();
-
-        return em.getObject();
-    }
+//    /**
+//     * JPA EntityManagerFactory
+//     * @param dataSource
+//     * @return EntityManagerFactory - this creates EntityManager Objects
+//     */
+//    @Bean
+//    public EntityManagerFactory entityManagerFactory( DataSource dataSource){
+//        System.out.println("creating EntityManagerFactory");
+//        final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+//        em.setDataSource(dataSource);
+//        em.setPackagesToScan("com.kibo.order.data.entity.entity");
+//        em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+//        em.setJpaProperties(hibernateProperties());
+//        em.setPersistenceUnitName("mytestdomain");
+//        em.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+//        em.afterPropertiesSet();
+//
+//        return em.getObject();
+//    }
 }

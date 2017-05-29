@@ -1,6 +1,5 @@
-package com.kibo.order.service.service_implementation;
+package com.kibo.order.service.implementations;
 
-import com.kibo.order.service.service.PhoneService;
 import com.kibo.order.data.repository.v1.dao.PhoneDao;
 import com.kibo.order.data.entity.entity.Phone;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +10,13 @@ import java.util.List;
 
 /**
  * Created by marcus.chiu on 10/26/16.
- * @Service - indicates this class as a service stereotype
+ * @Service - indicates this class as a interfaces stereotype
  * @Transactional - starts a transaction on each method start and
  * commits it on each method exit (or rollback if method failed)
  */
 @Service("phoneService")
 @Transactional
-public class PhoneServiceImpl implements PhoneService{
+public class PhoneService implements com.kibo.order.service.interfaces.IPhoneService {
 
     @Autowired
     private PhoneDao phoneDao;

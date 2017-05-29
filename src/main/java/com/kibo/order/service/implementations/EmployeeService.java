@@ -1,6 +1,5 @@
-package com.kibo.order.service.service_implementation;
+package com.kibo.order.service.implementations;
 
-import com.kibo.order.service.service.EmployeeService;
 import com.kibo.order.data.repository.v1.dao.EmployeeDao;
 import com.kibo.order.data.entity.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +10,13 @@ import java.util.List;
 
 /**
  * Created by marcus.chiu on 10/17/16.
- * @Service - indicates this class as a service stereotype
+ * @Service - indicates this class as a interfaces stereotype
  * @Transactional - starts a transaction on each method start and
  * commits it on each method exit (or rollback if method failed)
  */
 @Service("employeeService")
 @Transactional
-public class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeService implements com.kibo.order.service.interfaces.IEmployeeService {
 
     //EmployeeDaoImpl bean is used
     @Autowired
@@ -41,7 +40,7 @@ public class EmployeeServiceImpl implements EmployeeService {
      */
     @Override
     public void updateEmployee(Employee employee) {
-        System.out.println("EmployeeServiceImpl.updateEmployee");
+        System.out.println("EmployeeService.updateEmployee");
         Employee entity = dao.findById(employee.getId());
         //Name embeddedName = entity.getNameTwo();
 

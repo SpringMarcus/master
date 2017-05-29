@@ -1,4 +1,4 @@
-package com.kibo.order.service;
+package com.kibo.order.service.implementations;
 
 import com.kibo.order.data.entity.entity.Customer;
 import com.kibo.order.data.entity.entity.orderitem.OrderItem;

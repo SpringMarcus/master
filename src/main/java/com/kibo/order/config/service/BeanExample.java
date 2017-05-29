@@ -1,4 +1,4 @@
-package com.kibo.order.bean;
+package com.kibo.order.config.service;
 
 import lombok.Data;
 

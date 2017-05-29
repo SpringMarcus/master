@@ -1,7 +1,7 @@
-package com.kibo.order.controller.view;
+package com.kibo.order.controller.html;
 
-import com.kibo.order.AppInitializer;
-import com.kibo.order.service.service.EmployeeService;
+import com.kibo.order.app.AppInitializer;
+import com.kibo.order.service.interfaces.IEmployeeService;
 import com.kibo.order.data.entity.embeddable.Name;
 import com.kibo.order.data.entity.entity.Employee;
 import org.joda.time.LocalDate;
@@ -32,7 +32,7 @@ public class AppControllerTest {
     private MockMvc mockMvc;
 
     @Mock
-    private EmployeeService employeeService;
+    private IEmployeeService employeeService;
 
     @InjectMocks
     private AppController appControllerUnderTest;
@@ -41,7 +41,7 @@ public class AppControllerTest {
     public void setup() {
 
         // this must be called for the @Mock annotations above to be processed
-        // and for the mock service to be injected into the controller under
+        // and for the mock interfaces to be injected into the controller under
         // test.
         // or just uncomment @RunWith(MockitoJUnitRunner.class)
         MockitoAnnotations.initMocks(this);

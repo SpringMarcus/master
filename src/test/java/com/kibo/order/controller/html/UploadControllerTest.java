@@ -1,10 +1,12 @@
-package com.kibo.order.controller.view;
+package com.kibo.order.controller.html;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kibo.order.AppInitializer;
+import com.kibo.order.app.AppInitializer;
+import com.kibo.order.controller.json.AjaxResponse;
+import com.kibo.order.controller.json.UploadController;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -37,7 +39,7 @@ public class UploadControllerTest {
     public void setup() {
 
         // this must be called for the @Mock annotations above to be processed
-        // and for the mock service to be injected into the controller under
+        // and for the mock interfaces to be injected into the controller under
         // test.
         // or just uncomment @RunWith(MockitoJUnitRunner.class)
         MockitoAnnotations.initMocks(this);

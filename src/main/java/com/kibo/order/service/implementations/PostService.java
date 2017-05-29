@@ -1,6 +1,5 @@
-package com.kibo.order.service.service_implementation;
+package com.kibo.order.service.implementations;
 
-import com.kibo.order.service.service.PostService;
 import com.kibo.order.data.entity.entity.Post;
 import com.kibo.order.data.repository.v1.dao.PostDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ import java.util.List;
  */
 @Service("postService")
 @Transactional
-public class PostServiceImpl implements PostService {
+public class PostService implements com.kibo.order.service.interfaces.IPostService {
 
     //PostDaoImpl bean is used
     @Autowired

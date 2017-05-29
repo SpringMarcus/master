@@ -1,4 +1,4 @@
-package com.kibo.order.service.service;
+package com.kibo.order.service.interfaces;
 
 import com.kibo.order.data.entity.entity.Employee;
 
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by marcus.chiu on 10/17/16.
  */
-public interface EmployeeService {
+public interface IEmployeeService {
     Employee findById(int id);
 
     void saveEmployee(Employee employee);

@@ -1,6 +1,6 @@
-package com.kibo.order.controller.view;
+package com.kibo.order.controller.html;
 
-import com.kibo.order.service.service.PostService;
+import com.kibo.order.service.interfaces.IPostService;
 import com.kibo.order.data.entity.entity.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ import java.util.List;
 public class PostController {
 
     @Autowired
-    PostService postService;
+    IPostService postService;
 
     /**
      *

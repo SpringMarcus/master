@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.*;
@@ -19,7 +20,7 @@ import javax.annotation.PostConstruct;
  * Created by marcus.chiu on 10/16/16.
  * This is the root Configuration Class
  * @Configuration - indicates this class contains annotated bean method(s)
- * @EnableWebMvc - is equivalent to <view:annotation-driven /> in XML.
+ * @EnableWebMvc - is equivalent to <html:annotation-driven /> in XML.
  * It enables support for @Controller-annotated classes that use @RequestMapping
  * to map incoming requests to a certain method.
  * @ComponentScan - refers to package locations to find the associated beans
@@ -70,7 +71,7 @@ public class MVCConfig extends WebMvcConfigurationSupport {
     ///////////
 
     /**
-     * Configures a view resolver to identify the real view
+     * Configures a html resolver to identify the real html
      * @return ViewResolver
      */
     @Bean
@@ -78,7 +79,7 @@ public class MVCConfig extends WebMvcConfigurationSupport {
         //Create new View Resolver
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 
-        //Set view class as JSP Standard Tags Library
+        //Set html class as JSP Standard Tags Library
         viewResolver.setViewClass(JstlView.class);
 
         //Set prefix and suffix
@@ -88,7 +89,7 @@ public class MVCConfig extends WebMvcConfigurationSupport {
         //return View Resolver
         return viewResolver;
     }
-    // another way to configure a view resolver
+    // another way to configure a html resolver
     /*@Bean
     public InternalResourceViewResolver getInternalResourceViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -107,9 +108,9 @@ public class MVCConfig extends WebMvcConfigurationSupport {
         //Create new ResourceBundleMessageSource object
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
 
-        //Spring will search for file named 'messages.properties' in app class path
-        // ~/src/main/resources/messages.properties
-        messageSource.setBasename("messages");
+        //Spring will search for file named 'en_messages.properties' in app class path
+        // ~/src/main/resources/en_messages.properties
+        messageSource.setBasename("properties/language/en_messages");
 
         //return as MessageSource
         return messageSource;
@@ -119,7 +120,7 @@ public class MVCConfig extends WebMvcConfigurationSupport {
      * Prerequisite - need 'commons-fileupload' in maven
      * @return
      */
-    @Bean
+    @Bean//(name = "multipartResolver")
     public CommonsMultipartResolver multipartResolver() {
         CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
 

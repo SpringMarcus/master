@@ -1,6 +1,5 @@
-package com.kibo.order;
+package com.kibo.order.app;
 
-import com.kibo.order.config.AppConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;

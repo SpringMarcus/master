@@ -1,6 +1,6 @@
-package com.kibo.order.controller.view;
+package com.kibo.order.controller.html;
 
-import com.kibo.order.service.service.EmployeeService;
+import com.kibo.order.service.interfaces.IEmployeeService;
 import com.kibo.order.data.entity.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -27,7 +27,7 @@ import java.util.Locale;
 public class AppController {
 
     @Autowired
-    EmployeeService employeeService;
+    IEmployeeService employeeService;
 
     @Autowired
     MessageSource messageSource;

@@ -1,4 +1,4 @@
-package com.kibo.order.config;
+package com.kibo.order.app;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,13 +10,20 @@ import org.springframework.core.io.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * AppConfig takes care of:
+ * - setting up the config files
+ * - initializing beans
+ */
 @Configuration
-@ComponentScan(basePackages = {
-        "com.kibo.order.config.controller",
-        "com.kibo.order.config.service",
-        "com.kibo.order.config.data"})
+@ComponentScan(basePackages = {"com.kibo.order.config"})
 public class AppConfig {
 
+    /**
+     * reads the 'order.manager.properties' and '${whoami}_order.manager.properties' files
+     * example use in class '@Value("${jdbc.url}")' where jdbc.url is the key
+     * @return
+     */
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
         // create Property Configurer

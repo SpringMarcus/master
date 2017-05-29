@@ -1,6 +1,6 @@
-package com.kibo.order.controller.view;
+package com.kibo.order.controller.html;
 
-import com.kibo.order.service.service.PhoneService;
+import com.kibo.order.service.interfaces.IPhoneService;
 import com.kibo.order.data.entity.entity.Phone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ import java.util.List;
 public class PhoneController {
 
     @Autowired
-    PhoneService phoneService;
+    IPhoneService phoneService;
 
     /**
      * @param modelMap

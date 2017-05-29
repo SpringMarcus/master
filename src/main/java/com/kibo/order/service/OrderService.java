@@ -1,16 +1,15 @@
 package com.kibo.order.service;
 
 import com.kibo.order.data.entity.entity.Customer;
-import com.kibo.order.data.entity.entity.Item;
-import com.kibo.order.data.entity.entity.Order;
-import com.kibo.order.data.repository.v2.CustomerRepository;
-import com.kibo.order.data.repository.v2.ItemRepository;
-import com.kibo.order.data.repository.v2.OrderRepository;
-import com.kibo.order.util.status.OrderStatus;
+import com.kibo.order.data.entity.entity.orderitem.OrderItem;
+import com.kibo.order.data.entity.entity.order.Order;
+import com.kibo.order.data.repository.jpa.CustomerRepository;
+import com.kibo.order.data.repository.jpa.OrderItemRepository;
+import com.kibo.order.data.repository.jpa.OrderRepository;
+import com.kibo.order.data.entity.entity.order.OrderStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,27 +22,27 @@ public class OrderService {
     private CustomerRepository custRepo;
 
     @Autowired
-    private ItemRepository itemRepo;
+    private OrderItemRepository itemRepo;
 
     @Autowired
     private OrderRepository orderRepo;
     
-    public Item createItem(String upc, String name) {
+    public OrderItem createItem(String upc, String name) {
         //TODO: Implement this
-        Item item = new Item(name, upc);
+        OrderItem orderItem = new OrderItem(name, upc);
 
-        itemRepo.save(item);
+        itemRepo.save(orderItem);
 
-        return item;
+        return orderItem;
     }
 
     public Order createOrderInProgress(Customer c, List<Integer> items) {
         //TODO: Implement this.
-        List<Item> orderItems = new ArrayList<Item>();
+        List<OrderItem> orderItems = new ArrayList<OrderItem>();
 
         for (Integer i : items) {
-            Item item = itemRepo.findOne(i);
-            orderItems.add(item);
+            OrderItem orderItem = itemRepo.findOne(i);
+            orderItems.add(orderItem);
         }
 
         Order order = new Order(c, OrderStatus.IN_PROGRESS, orderItems);
@@ -56,16 +55,16 @@ public class OrderService {
         return o;
     }
 
-    @Transactional(readOnly = true)
-    public List<Item> getItemsForOrder(Order o) {
-        //TODO: Implement this.
-        return o.getOrderItems();
-    }
+//    @Transactional(readOnly = true)
+//    public List<OrderItem> getItemsForOrder(Order o) {
+//        //TODO: Implement this.
+//        return o.getOrderItems();
+//    }
 
-    public Item findItemsByUpc(String upc) {
+    public OrderItem findItemsByUpc(String upc) {
         //TODO: Implement this
-        Iterable<Item> items = itemRepo.findAll();
-        for(Item i : items) {
+        Iterable<OrderItem> items = itemRepo.findAll();
+        for(OrderItem i : items) {
             if(i.getUpc() == upc) {
                 return i;
             }

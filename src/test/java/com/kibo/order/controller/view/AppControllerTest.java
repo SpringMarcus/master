@@ -1,6 +1,6 @@
-package com.kibo.order.controller.mvc;
+package com.kibo.order.controller.view;
 
-import com.kibo.order.a_AppInitializer;
+import com.kibo.order.AppInitializer;
 import com.kibo.order.service.service.EmployeeService;
 import com.kibo.order.data.entity.embeddable.Name;
 import com.kibo.order.data.entity.entity.Employee;
@@ -25,8 +25,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 //@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {a_AppInitializer.class})
-//@WebAppConfiguration not needed because a_AppInitializer.class implements WebApplicationInitializer
+@ContextConfiguration(classes = {AppInitializer.class})
+//@WebAppConfiguration not needed because AppInitializer.class implements WebApplicationInitializer
 public class AppControllerTest {
 
     private MockMvc mockMvc;

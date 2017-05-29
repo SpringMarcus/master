@@ -1,4 +1,4 @@
-package com.kibo.order.controller.mvc;
+package com.kibo.order.controller.view;
 
 import com.kibo.order.service.service.EmployeeService;
 import com.kibo.order.data.entity.entity.Employee;

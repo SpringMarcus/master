@@ -1,10 +1,10 @@
-package com.kibo.order.controller.mvc;
+package com.kibo.order.controller.view;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kibo.order.a_AppInitializer;
+import com.kibo.order.AppInitializer;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -24,8 +24,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@RunWith(MockitoJUnitRunner.class)
-@ContextConfiguration(classes = {a_AppInitializer.class})
-//@WebAppConfiguration not needed because a_AppInitializer.class implements WebApplicationInitializer
+@ContextConfiguration(classes = {AppInitializer.class})
+//@WebAppConfiguration not needed because AppInitializer.class implements WebApplicationInitializer
 public class UploadControllerTest {
 
     private MockMvc mockMvc;

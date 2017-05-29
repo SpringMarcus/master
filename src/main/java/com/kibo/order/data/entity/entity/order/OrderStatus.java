@@ -1,4 +1,4 @@
-package com.kibo.order.util.status;
+package com.kibo.order.data.entity.entity.order;
 
 public enum OrderStatus {
     FULFILLED,

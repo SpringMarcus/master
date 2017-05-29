@@ -1,4 +1,4 @@
-package com.kibo.order.config;
+package com.kibo.order.config.data;
 
 import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Value;

@@ -8,21 +8,11 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "customer")
-public class Customer {
+@Table(name = "attributes")
+public class Attributes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    //TODO: Add more fields here.
-    private String email;
-
-    private String name;
-
-    private String addressId;
-
-    @OneToMany
-    private List<Order> orders;
-    
-    public Customer() {}
+    public Attributes() {}
  }

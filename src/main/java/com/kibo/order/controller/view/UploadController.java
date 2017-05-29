@@ -1,4 +1,4 @@
-package com.kibo.order.controller.mvc;
+package com.kibo.order.controller.view;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;

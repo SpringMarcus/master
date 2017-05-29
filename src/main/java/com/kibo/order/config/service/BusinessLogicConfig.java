@@ -1,4 +1,4 @@
-package com.kibo.order.config;
+package com.kibo.order.config.service;
 
 import com.kibo.order.bean.BeanExample;
 import org.springframework.context.annotation.Bean;

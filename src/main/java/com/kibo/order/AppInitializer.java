@@ -1,11 +1,10 @@
 package com.kibo.order;
 
-import com.kibo.order.config.MVCConfig;
+import com.kibo.order.config.AppConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import javax.persistence.EntityManager;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
@@ -14,7 +13,7 @@ import javax.servlet.ServletRegistration;
  * Created by marcus.chiu on 10/16/16.
  * Resembles the web.xml file under the WEB-INF folder
  */
-public class a_AppInitializer implements WebApplicationInitializer {
+public class AppInitializer implements WebApplicationInitializer {
 
     /**
      * This onStartup method is similar to web.xml file
@@ -25,10 +24,10 @@ public class a_AppInitializer implements WebApplicationInitializer {
      */
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        System.out.println("WebApplicationInitializer.onStartup");
-        System.out.println(EntityManager.class.getProtectionDomain()
-                .getCodeSource()
-                .getLocation());
+//        System.out.println("WebApplicationInitializer.onStartup");
+//        System.out.println(EntityManager.class.getProtectionDomain()
+//                .getCodeSource()
+//                .getLocation());
 
         //create new AnnotationConfigWebApplicationContext object
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
@@ -46,7 +45,7 @@ public class a_AppInitializer implements WebApplicationInitializer {
         </listener>
          */
         //register Configuration Class
-        ctx.register(MVCConfig.class);
+        ctx.register(AppConfig.class);
         ctx.setServletContext(servletContext);
 
         //we are using front-controller DispatcherServlet

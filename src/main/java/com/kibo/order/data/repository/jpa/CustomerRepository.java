@@ -1,4 +1,4 @@
-package com.kibo.order.data.repository.v2;
+package com.kibo.order.data.repository.jpa;
 
 import com.kibo.order.data.entity.entity.Customer;
 import org.springframework.data.repository.CrudRepository;

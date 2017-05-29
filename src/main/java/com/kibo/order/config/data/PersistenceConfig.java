@@ -1,4 +1,4 @@
-package com.kibo.order.config;
+package com.kibo.order.config.data;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
@@ -32,7 +32,6 @@ import java.util.Properties;
  */
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"com.kibo.order.config"})
 public class PersistenceConfig {
 
     @Value("${jdbc.driverClassName}")
@@ -166,7 +165,7 @@ public class PersistenceConfig {
         System.out.println("creating EntityManagerFactory");
         final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.marcus.chiu.springmvc.a_configuration");
+        em.setPackagesToScan("com.kibo.order.data.entity.entity");
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         em.setJpaProperties(hibernateProperties());
         em.setPersistenceUnitName("mytestdomain");

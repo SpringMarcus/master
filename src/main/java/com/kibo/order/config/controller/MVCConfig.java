@@ -1,5 +1,6 @@
-package com.kibo.order.config;
+package com.kibo.order.config.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,20 +19,20 @@ import javax.annotation.PostConstruct;
  * Created by marcus.chiu on 10/16/16.
  * This is the root Configuration Class
  * @Configuration - indicates this class contains annotated bean method(s)
- * @EnableWebMvc - is equivalent to <mvc:annotation-driven /> in XML.
+ * @EnableWebMvc - is equivalent to <view:annotation-driven /> in XML.
  * It enables support for @Controller-annotated classes that use @RequestMapping
  * to map incoming requests to a certain method.
  * @ComponentScan - refers to package locations to find the associated beans
  * @Import - imports another configuration class into this class (essentially appending it)
  */
+@Slf4j
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.kibo.order")
 public class MVCConfig extends WebMvcConfigurationSupport {
 
     @PostConstruct
     public void status() {
-        System.out.println("B_MVCConfig loaded");
+        log.debug("MVCConfig loaded");
     }
 
     ///////////////

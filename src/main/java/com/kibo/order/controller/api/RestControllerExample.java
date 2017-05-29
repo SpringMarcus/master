@@ -1,4 +1,4 @@
-package com.kibo.order.controller.rest;
+package com.kibo.order.controller.api;
 
 import com.kibo.order.bean.BeanExample;
 import org.springframework.beans.factory.annotation.Autowired;

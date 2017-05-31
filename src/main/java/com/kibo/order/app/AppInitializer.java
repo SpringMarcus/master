@@ -71,6 +71,7 @@ public class AppInitializer implements WebApplicationInitializer {
             <async-supported>true</async-supported>
         </servlet>
          */
+        servlet.setAsyncSupported(true);
         servlet.setLoadOnStartup(1);
     }
 }

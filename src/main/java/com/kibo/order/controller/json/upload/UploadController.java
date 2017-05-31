@@ -1,5 +1,6 @@
-package com.kibo.order.controller.json;
+package com.kibo.order.controller.json.upload;
 
+import com.kibo.order.controller.json.upload.response.UploadResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -33,9 +34,9 @@ public class UploadController {
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public AjaxResponse giftCertificateUpload(@RequestParam("file") MultipartFile file) throws Exception {
+    public UploadResponse giftCertificateUpload(@RequestParam("file") MultipartFile file) throws Exception {
 
-        AjaxResponse response = new AjaxResponse();
+        UploadResponse response = new UploadResponse();
 
         try {
 

@@ -5,8 +5,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kibo.order.app.AppInitializer;
-import com.kibo.order.controller.json.AjaxResponse;
-import com.kibo.order.controller.json.UploadController;
+import com.kibo.order.controller.json.upload.UploadController;
+import com.kibo.order.controller.json.upload.response.UploadResponse;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -65,22 +65,22 @@ public class UploadControllerTest {
 
         MvcResult mvcResult = resultActions.andReturn();
         String ajaxResponseString = mvcResult.getResponse().getContentAsString();
-        AjaxResponse ajaxResponse = decode(ajaxResponseString);
+        UploadResponse response = decode(ajaxResponseString);
 
         ////////////
         // ASSERT //
         ////////////
 
-        assertEquals(ajaxResponse.getFileName(), fileName);
-        assertEquals(ajaxResponse.getSuccess(), true);
+        assertEquals(response.getFileName(), fileName);
+        assertEquals(response.getSuccess(), true);
     }
 
-    private static AjaxResponse decode(String s) {
-        AjaxResponse example = null;
+    private static UploadResponse decode(String s) {
+        UploadResponse example = null;
 
         try {
             ObjectMapper mapper = new ObjectMapper();
-            example = mapper.readValue(s, AjaxResponse.class);
+            example = mapper.readValue(s, UploadResponse.class);
         } catch (JsonParseException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {
@@ -92,7 +92,7 @@ public class UploadControllerTest {
         return example;
     }
 
-    private static String encode(AjaxResponse example) {
+    private static String encode(UploadResponse example) {
         String s = "";
 
         try {

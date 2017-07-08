@@ -8,8 +8,12 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ * This class depends on SecurityWebApplicationInitializer for /login to work
+ */
 @Configuration
 @EnableWebSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true, proxyTargetClass = true)
 //@EnableWebMvcSecurity deprecated
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -18,12 +22,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     ///////////////
 
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER")
-                .and()
-                .withUser("admin").password("password").roles("ADMIN");
+    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
+        auth.inMemoryAuthentication().withUser("admin").password("password").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser("dba").password("password").roles("ADMIN","DBA");
     }
+
+    //////////////
+    // OVERRIDE //
+    //////////////
 
     @Override
     public void configure(WebSecurity web) throws Exception {
@@ -35,18 +42,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/", "/home", "/about").permitAll()
-                .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .antMatchers("/user/**").hasAnyRole("USER")
+            .authorizeRequests()
+                .antMatchers("/", "/home").permitAll()
+                .antMatchers("/admin/**").access("hasRole('ADMIN')")
+                .antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/login")
+            .formLogin()
+//                    .loginPage("/login")
                 .permitAll()
                 .and()
-                .logout()
-                .permitAll();
+            .logout()
+                .permitAll()
+                .and()
+            .exceptionHandling()
+                .accessDeniedPage("/access_denied");
     }
 
     /////////////////////

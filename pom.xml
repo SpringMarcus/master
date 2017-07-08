@@ -29,6 +29,7 @@
     <!-- variables used in dependencies below -->
     <properties>
         <springframework.version>4.0.6.RELEASE</springframework.version>
+        <org.springframework-security-version>4.0.2.RELEASE</org.springframework-security-version>
         <!-- org.hibernate.Criteria not yet deprecated -->
         <hibernate.version>4.3.6.Final</hibernate.version>
         <!-- <hibernate.version>5.0.2.Final</hibernate.version> -->
@@ -92,37 +93,70 @@
         </dependency>
         -->
 
-        <!-- Spring -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>${springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>${springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>1.8.2.RELEASE</version>
-        </dependency>
+        <!-- SPRING - START -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <!-- Spring Database - START -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>1.8.2.RELEASE</version>
+            </dependency>
+            <!-- Spring Database - START -->
+
+            <!-- Spring Security - START -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${org.springframework-security-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${org.springframework-security-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${org.springframework-security-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${org.springframework-security-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-cas</artifactId>
+                <version>${org.springframework-security-version}</version>
+            </dependency>
+            <!-- Spring Security - START -->
+
+        <!-- SPRING - END -->
 
         <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
         <!-- needed for CommonsMultipartResolver bean -->
@@ -360,7 +394,7 @@
                         <!-- configures plugin to build war package -->
                         <warSourceDirectory>src/main/webapp</warSourceDirectory>
                         <warName>SpringHibernateExample</warName>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                        <failOnMissingWebXml>false</failOnMissingWebXml><!-- because we replace web.xml with java WebApplicationInitializer -->
                     </configuration>
                 </plugin>
             </plugins>

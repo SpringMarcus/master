@@ -34,7 +34,7 @@
             </tr>
 
             <tr>
-                <td><label for="joiningDate">Joining Date: </label> </td>
+                <td><label for="joiningDate">Joining Date (MM/DD/YYYY): </label> </td>
                 <td><form:input path="joiningDate" id="joiningDate"/></td>
                 <td><form:errors path="joiningDate" cssClass="error"/></td>
             </tr>
@@ -58,7 +58,7 @@
             </tr>
 
             <tr>
-                <td><label for="text">Text: </label> </td>
+                <td><label for="text">Phone (000)000-0000: </label> </td>
                 <td><form:input path="text" id="ssn"/></td>
                 <td><form:errors path="text" cssClass="error"/></td>
             </tr>
@@ -80,6 +80,6 @@
     </form:form>
     <br/>
     <br/>
-    Go back to <a href="<c:url value='/list' />">List of All Employees</a>
+    Go back to <a href="<c:url value='/employee/list' />">List of All Employees</a>
 </body>
 </html>

@@ -33,7 +33,7 @@
                 <td>${employee.name}</td>
                 <td>${employee.joiningDate}</td>
                 <td>${employee.salary}</td>
-                <td><a href="<c:url value='/edit-${employee.ssn}-employee' />">${employee.ssn}</a></td>
+                <td><a href="<c:url value='/employee/edit-${employee.ssn}-employee' />">${employee.ssn}</a></td>
 
                 <td>${employee.nameTwo.first}</td>
                 <td>${employee.nameTwo.middle}</td>
@@ -47,18 +47,21 @@
                 <!-- this calls the employee.getPhones().get(0).getNumber() -->
                 <td>${employee.phones[0].number}</td>
 
-                <td><a href="<c:url value='/delete-${employee.ssn}-employee' />">delete</a></td>
+                <td><a href="<c:url value='/employee/delete-${employee.ssn}-employee' />">delete</a></td>
             </tr>
         </c:forEach>
     </table>
 
     <br/>
-    <a href="<c:url value='/new' />">Add New Employee</a>
+    <a href="<c:url value='/employee/new' />">Register New Employee</a>
 
     <br/>
     Go to <a href="<c:url value='/post/list' />">post list controller</a>
 
     <br/>
     Go to <a href="<c:url value='/phone/list' />">phone list controller</a>
+
+    <br/>
+    Go to <a href="<c:url value='/home' />">Home Page</a>
 </body>
 </html>

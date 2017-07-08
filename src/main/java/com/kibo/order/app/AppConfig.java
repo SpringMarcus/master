@@ -12,8 +12,10 @@ import java.util.List;
 
 /**
  * AppConfig takes care of:
- * - setting up the config files
+ * - setting up the config files (which are @Configuration files)
  * - initializing beans
+ * @Configuration - indicates this class contains annotated bean method(s)
+ * @ComponentScan - refers to package locations to find the associated beans (specifically @Controller)
  */
 @Configuration
 @ComponentScan(basePackages = {"com.kibo.order.config"})

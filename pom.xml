@@ -1,32 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- pom - project object entity -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <!-- The modelVersion element sets what version of the POM model
-    you are using. Use the one matching the Maven version you are using.
-    Version 4.0.0 matches Maven version 2 and 3. -->
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- group or organization that this project belongs to
-    often inverted domain name -->
     <groupId>com.kibo.order</groupId>
-
-    <!-- name given to this project library -->
     <artifactId>order-manager</artifactId>
-
-    <!-- version of this project -->
     <version>1.0.0-SNAPSHOT</version>
-
-    <!-- how this project should be packaged jar(default) or war -->
-    <!-- name of jar or war file will be artifact id + version -->
     <packaging>war</packaging>
-
     <name>Order Manager</name>
     <url>http://maven.apache.org</url>
 
-    <!-- variables used in dependencies below -->
     <properties>
         <springframework.version>4.0.6.RELEASE</springframework.version>
         <org.springframework-security-version>4.0.2.RELEASE</org.springframework-security-version>
@@ -41,59 +25,10 @@
         <h2.version>1.4.187</h2.version>
         <dbunit.version>2.2</dbunit.version>
     </properties>
-    <!--
-    <properties>
-        <joda-time.version>2.3</joda-time.version>
-        org.hibernate.Criteria is deprecated at version 5
-        <hibernate.version>5.0.1.Final</hibernate.version>
-        <springframework.version>4.2.4.RELEASE</springframework.version>
-        <kotlin.version>1.0.4</kotlin.version>
-        <mysql.connector.version>5.1.34</mysql.connector.version>
-        <joda-time.version>2.3</joda-time.version>
-
-        <testng.version>6.9.4</testng.version>
-        <mockito.version>1.10.19</mockito.version>
-        <h2.version>1.4.187</h2.version>
-        <dbunit.version>2.2</dbunit.version>
-    </properties>-->
 
     <dependencies>
-        <!-- this is where you get dependencies -->
-        <!-- https://mvnrepository.com/ -->
-
-         <!-- Example Dependency
-         <dependency>
-
-            //The group/organization this belongs to
-            <groupId>mysql</groupId>
-
-            //The library that's required
-            <artifactId>mysql-connector-java</artifactId>
-
-            //The version of the requested library
-            <version>5.1.34</version>
-
-            // scope
-            // 'compile' by default - which is ready at compile time
-            // 'provided' - will be provided at runtime by a container running the code
-            // 'test' - used for compiling tests, but not required for building/running code
-            // 'runtime' - This scope indicates that the dependency is not required for compilation,
-                           but is for execution. It is in the runtime and test classpaths, but not
-                           the compile classpath.
-            // 'system' - This scope is similar to provided except that you have to provide the JAR
-                          which contains it explicitly. The artifact is always available and is not
-                          looked up in a repository. import (only available in Maven 2.0.9 or later):
-                          This scope is only used on a dependency of type pom in the section.
-                          It indicates that the specified POM should be replaced with the dependencies
-                          in that POM's section. Since they are replaced, dependencies with a scope of
-                          import do not actually participate in limiting the transitivity of a dependency.
-
-            <scope>runtime</scope>
-
-        </dependency>
-        -->
-
         <!-- SPRING - START -->
+            <!-- Spring Core - START -->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
@@ -109,6 +44,7 @@
                 <artifactId>spring-webmvc</artifactId>
                 <version>${springframework.version}</version>
             </dependency>
+            <!-- Spring Core - END -->
 
             <!-- Spring Database - START -->
             <dependency>
@@ -357,18 +293,6 @@
             <scope>compile</scope>
         </dependency> -->
 
-        <!--<dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib</artifactId>
-            <version>${kotlin.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>test</scope>
-        </dependency>-->
-
     </dependencies>
 
 
@@ -394,45 +318,11 @@
                         <!-- configures plugin to build war package -->
                         <warSourceDirectory>src/main/webapp</warSourceDirectory>
                         <warName>SpringHibernateExample</warName>
-                        <failOnMissingWebXml>false</failOnMissingWebXml><!-- because we replace web.xml with java WebApplicationInitializer -->
+                        <failOnMissingWebXml>false</failOnMissingWebXml><!-- because we replace web.xml with java AppInitializer -->
                     </configuration>
                 </plugin>
             </plugins>
-
-            <!--
-            <plugin>
-                <groupId>org.springframework.boot</groupOd>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            -->
         </pluginManagement>
         <finalName>SpringHibernateExample</finalName>
     </build>
-
-    <!--<build>
-        <plugins>
-            <plugin>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-maven-plugin</artifactId>
-                <version>${kotlin.version}</version>
-                <executions>
-                    <execution>
-                        <id>compile</id>
-                        <phase>process-sources</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>test-compile</id>
-                        <phase>process-test-sources</phase>
-                        <goals>
-                            <goal>test-compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>-->
-
 </project>

@@ -23,12 +23,14 @@ import javax.annotation.PostConstruct;
  * @EnableWebMvc - is equivalent to <html:annotation-driven /> in XML.
  * It enables support for @Controller-annotated classes that use @RequestMapping
  * to map incoming requests to a certain method.
- * @ComponentScan - refers to package locations to find the associated beans
+ * @ComponentScan - refers to package locations to find the associated beans (specifically @Controller for this class)
  * @Import - imports another configuration class into this class (essentially appending it)
  */
 @Slf4j
 @Configuration
 @EnableWebMvc
+@ComponentScan(basePackages = "com.kibo.order.controller")
+//@Import() not needed for now
 public class MVCConfig extends WebMvcConfigurationSupport {
 
     @PostConstruct

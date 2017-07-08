@@ -8,5 +8,5 @@ STEPS TO RUN THIS PROJECT
 4. edit the order.manager.properties files:
    - /src/main/resources/order.manager.properties
    - /src/main/resources/marcus.chiu_order.manager.properties
-
-connect to Tomcat Server and run this baby!
+5. mvn clean install -Dmaven.test.skip=true
+6. connect to Tomcat Server and run this baby!
